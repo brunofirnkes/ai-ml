@@ -1,0 +1,62 @@
+- Linear regression:
+	predict numbers/categories
+	
+	- training set:
+		data used to train the model
+	- "x" = input variable; "y" = output/target variable; m = number of training examples
+	
+	training set -> learning algorith -> f(x): "y-hat" (estimate/prediction)
+	
+	f(x) = wx + b
+	
+	cost function:
+		calculate w and b
+		(ŷ - y)² = error 
+		Sum(i=1 -> m) (ŷ - y)²	= value 1/(2m) 
+		= J(w, b) "Squared error cost function"
+		
+		our goal is -> minimze J(w, b).
+		
+		-> Gradient descent algorithm:
+			(golf field example with baby steps)
+			
+			- start with some w and b (ex.: w=1, b=0)
+			- keep changing w and b until near a minimum
+			
+			new_w = w - alpha * (p.der(w) J(w, b))
+			new_b = b - alpha * (p.der(b) J(w, b))
+			
+			w = new_w
+			b = new_b
+			
+			p.der means partial derivate
+			
+			- keep simultaneously updating w and b
+			- alpha = learning rate
+				- if alpha is to small: gradient descent might be low
+				- if alpha is to big: overshoot, never reach minimum.
+	
+=======================================================================================================
+- Supervised learning
+	learn from being given "right answers"
+	input	->	output (f(x) = y)
+	
+	- Classification:
+		n number of possible outputs
+		predict categories
+		
+	- Regression:
+		* number of possible outputs
+		predict numbers
+	
+- Unsupervised learning
+	"find something interesting"
+	
+	- Clustering:
+		seprate data in groups (clusters)
+		
+	- Anomaly detections
+		find unusual data points
+		
+	- Dimensionality reduction
+		compress data using fewer numbers
