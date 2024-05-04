@@ -1,0 +1,52 @@
+-> Classification:
+	- Find classes or categories
+	- Linear regression can be used but works poorly
+	
+	- Logistic regression:
+		- Sigmoid function (logistic function)
+			"probability" that class is 1
+			
+			g(z) = 1 / (1 + e^-z)
+			0 < g(z) < 1
+			
+			z = w(arrow) . x(arrow) + b	-> found via linear regression
+		
+		- Cost function for logistic regression
+			RSS doesn't work cause the cause function it is non-convex
+			
+			sum of logistic loss function
+			
+			loss =  { if y(i) = 1	->	loss = -log(f_wb(x))
+			 	{ if y(i) = 0	->	loss = -log(1 - f_wb(x)
+			 	
+			 joining the two functions into one:
+			 
+			 loss = -y(i) (log (f_wb(x)) - (1 - y(i)) log (1 - f_wb(x))
+			 	
+			 f_wb(x) is the sigmoid function
+			
+			> Loss is a measure of the difference of a single example to its target value
+			> Cost is a measure of the losses over the training set
+			
+		- Decision bounderies
+			g(z) = 0
+			w1x1 + w2x2 ... + wnxn + (other polinomials) = 0
+				- linear
+				- non linear	
+				
+		- Problem of overfitting:
+			-> high bias
+			-> high variance	
+			
+			Solution:
+			- More data
+			
+			- Feature selection
+				using just a few features more important to the model
+				
+			- Regularization
+				reduce the size of parameter wj
+				
+		- Cost function with regularization
+			 Chose lambda
+		

@@ -2,7 +2,7 @@ import math, copy
 import numpy as np
 import matplotlib.pyplot as plt
 
-def compute_cost(x, y, w, b):
+def compute_cost(x, y, w, b, lambda_ = 0):
     """
     Computes the total error cost
     Args:
@@ -101,6 +101,18 @@ def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient
 # Load our data set
 x_train = np.array([1.0, 2.0])   #features
 y_train = np.array([300.0, 500.0])   #target value
+
+# Useful to see data
+'''
+plt.scatter(x_train, y_train, marker='x', c='r') 
+# Set the title
+plt.title("Some title")
+# Set the y-axis label
+plt.ylabel('y')
+# Set the x-axis label
+plt.xlabel('x')
+plt.show()
+'''
 
 # initialize parameters
 w_init = 0

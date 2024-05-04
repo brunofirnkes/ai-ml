@@ -1,0 +1,61 @@
+- One variable:
+	x
+	f(x) = wx + b
+	
+- Multiple variables:
+	x1, x2, x3, ... xn	
+	f(X) = w1x1 + w2x2 + w3xx3 + ... + wnxn + b			-> !! linear algebra starts at index 1
+	
+	x(arrow)i = features of training example i	[it is a vector]
+	
+	xj i = value of feature j in traning example i
+	
+	f(X) = w(arrow) . (arrow) + b	=> "." = dot product
+	
+	python: f = np.dot(w,x) + b
+	
+	- Vectorization:
+		f = np.dot(w,x) + b
+		
+		runs in parallel in hardware
+		
+	- Gradient descent:
+		Instead of scalar multiplications, use vector multiplications
+		
+		- Normal equation is a alternative for gradient descent
+			Only for linear regression
+			Solve w and b withou iterations
+			
+			Don't generalize to other ML algorithms
+			Slow when large number of features (> 10k)
+				
+				
+		- Feature scaling:
+			allows gradient descent algorithms to run faster
+			min <= x1 <= max	-> scaling x1: x1 / max
+						-> mean normalization: average x1 -> (x1 - average x1) / (max - min)
+						-> z-score: standard deviation(normal distribuition)  -> (x1 - normal distr) / standard deviation
+						    # find the mean of each column/feature
+						    mu     = np.mean(X, axis=0)                 # mu will have shape (n,)
+						    # find the standard deviation of each column/feature
+						    sigma  = np.std(X, axis=0)                  # sigma will have shape (n,)
+						    # element-wise, subtract mu for that column from each example, divide by std for that column
+						    X_norm = (X - mu) / sigma  
+						    
+			aimn for -1 <= x1 <= 1. Not to small, not to big
+			
+		- Checking for convergance:
+			graph: iterations x cost	=> learning curve
+			graph should look like f(x) = x / log (x)
+			
+			- automatic convergance test:
+				if after one interation the cost decrease, declare CONVERGANCE
+				
+			try values for learning rate
+			
+	- Feature engineering:
+		Using intuition to design new features by transforming or combining original features
+		ex.: depth and frontage	-> area feature
+		
+		- Polynomial regression:
+			
